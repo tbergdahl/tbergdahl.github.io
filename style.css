@@ -7,9 +7,12 @@
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+
 }
 
 .navbar a:hover {
@@ -20,4 +23,35 @@
 .navbar a.active {
     background-color: #1fbe84;
     color: white;
-  }
+}
+
+.header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.divbody{
+    background-color: rgb(198, 216, 200);
+    width: 35%;
+    padding: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.divbody p {
+        padding: 2px;
+        font-family: Arial, Helvetica, sans-serif;
+        -webkit-text-fill-color: rgb(73, 72, 72);
+}
+
+.page {
+    background-color: rgb(245, 245, 226);
+}
+
+.message {
+    background-color: rgb(198, 216, 200);
+    width: 70%;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-fill-color: rgb(73, 72, 72);
+    line-height: 25px;
+}
