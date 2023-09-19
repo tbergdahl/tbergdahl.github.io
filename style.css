@@ -32,7 +32,7 @@
   .message {
     background-color: #c2ccc4;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     padding: 10px;
     line-height: 25px;
     width: 60%;
@@ -42,7 +42,7 @@
    .message-right {
     background-color: #c2ccc4;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     padding: 10px;
     line-height: 25px;
     width: 60%;
@@ -97,7 +97,7 @@
 
   .absolute-image-swing{
       position: absolute;
-      top: 30%;
+      top: 32%;
       left: 15%;
       width: 15%;
       height: 25%;
@@ -119,9 +119,9 @@
 }
 .absolute-image-mmj img{
   position: absolute;
-    top: 217%;
-    width: 100%;
-    height: 200%;
+    top: 240%;
+    width: 75%;
+    height: 150%;
 }
 
   .absolute-image-swing img{
