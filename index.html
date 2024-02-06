@@ -41,47 +41,96 @@
 <body>
     <h1>Rachel, Will You Be My Valentine?</h1>
     <div class="img"><img src="photos/rachel.jpg" alt="Your Image" style="width: 500px; height: auto; font-family: 'Courier New'"></div>
-    <div class="button-container">
-        <button id="yesButton">Yes</button> 
-        <button id="noButton">No</button>
-    </div>
-    <h2>(Date On 2/14/2024 @ 6PM, Or Whatever Works For You)</h2>
+    <form action="https://formspree.io/f/mpzvpyzq" method="POST">
+        <label for="confirmation"></label>
+        <select id="confirmation" name="confirmation" required>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Yes">Yes</option>
+            
+        </select>
 
-    <script>
-        // Define the button click counts in localStorage
-        let yesCount = parseInt(localStorage.getItem('yesCount')) || 0;
-        let noCount = parseInt(localStorage.getItem('noCount')) || 0;
+        <script>
+            document.getElementById('confirmationForm').addEventListener('submit', function (event) {
+                const confirmationValue = document.getElementById('confirmation').value;
+    
+                // Redirect based on the selected option
+                if (confirmationValue === "Yes") {
+                    window.location.href = 'yay.html'; // Replace with your actual URL
+                } else if (confirmationValue === "No") {
+                    window.location.href = 'frick.html'; // Replace with your actual URL
+                }
+    
+                // Prevent the form from submitting normally
+                event.preventDefault();
+            });
+        </script>
 
-        // Set initial button counts
-        document.getElementById('yesButton').innerText = `Yes (${yesCount} times)`;
-        document.getElementById('noButton').innerText = `No (${noCount} times)`;
+        <button type="submit">Yes</button>
+    </form>
 
-        // Function to handle button clicks
-        function handleButtonClick(buttonType, redirect) {
-            if (buttonType === 'Yes') {
-                yesCount++;
-                localStorage.setItem('yesCount', yesCount);
-                document.getElementById('yesButton').innerText = `Yes (${yesCount} times)`;
-            } else if (buttonType === 'No') {
-                noCount++;
-                localStorage.setItem('noCount', noCount);
-                document.getElementById('noButton').innerText = `No (${noCount} times)`;
-            }
-
-            // Redirect to the specified URL
-            setTimeout(() => {
-                window.location.href = redirect;
-            }, 1000);
-        }
-
-        // Add click event listeners to buttons
-        document.getElementById('yesButton').addEventListener('click', () => {
-            handleButtonClick('Yes', 'yay.html');
-        });
-
-        document.getElementById('noButton').addEventListener('click', () => {
-            handleButtonClick('No', 'frick.html');
-        });
-    </script>
+    
 </body>
 </html>
