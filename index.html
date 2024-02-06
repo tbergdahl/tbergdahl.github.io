@@ -56,10 +56,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebSocket Example</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 70vh;
+            margin: 0;
+        }
+
+        img {
+            width: 300px; /* Adjust the image size as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        button-container {
+            display: flex;
+            gap: 10px; /* Adjust the gap between buttons */
+            margin-top: 5px; /* Adjust the margin between the image and buttons */
+        }
+
+        h1 {
+            color: #e60000; /* Change the font color as needed */
+            text-align: center;
+            margin-bottom: 20px; /* Adjust the margin at the bottom of the header */
+        }
+    </style>
+    
 </head>
 <body>
-    <button onclick="sendRequest('Button 1')">Button 1</button>
-    <button onclick="sendRequest('Button 2')">Button 2</button>
+
+    <h1>Rachel, Will You Be My Valentine?</h1>
+
+
+    <div class = "img"><img src="photos/rachel.jpg" alt="Your Image" style="width: 500px; height: auto;"></div>
+    <div class ="button-container">
+        <button onclick="sendRequest('Yes')">Yes</button> 
+        <button onclick="sendRequest('Yes')">Yes</button>
+    </div>
+    
+    <button onclick="sendRequest('No')">No</button>
+
+    <h2>(Date On 2/14/2024 @ 6PM, Or Whatever Works For You)</h2>
 
     <script>
         // Define the socket variable globally
