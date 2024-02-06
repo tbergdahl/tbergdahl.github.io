@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!-- <!DOCTYPE HTML>
 <html lang="en">
 
 <head >
@@ -10,7 +10,6 @@
        <div class="navbar">
         <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
-        <a href="projects.html">My Projects</a>
        </div>
        <br><br>
        <div class="circle-container">
@@ -49,4 +48,49 @@
 
 
 
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Example</title>
+</head>
+<body>
+    <button onclick="sendRequest('Button 1')">Button 1</button>
+    <button onclick="sendRequest('Button 2')">Button 2</button>
+
+    <script>
+        // Define the socket variable globally
+        const socket = new WebSocket("ws://192.168.56.1:8765");
+
+        // Event listener to handle the opening of the WebSocket connection
+        socket.addEventListener('open', (event) => {
+            console.log('WebSocket connection opened:', event);
+        });
+
+        // Event listener to handle errors in the WebSocket connection
+        socket.addEventListener('error', (event) => {
+            console.error('WebSocket error:', event);
+        });
+
+        // Event listener to handle the closing of the WebSocket connection
+        socket.addEventListener('close', (event) => {
+            console.log('WebSocket connection closed:', event);
+        });
+
+        // Function to send requests using the WebSocket connection
+        function sendRequest(data) {
+            console.log('WebSocket connection state:', socket.readyState);
+
+            if (socket.readyState === WebSocket.OPEN) {
+                socket.send(data);
+            } else {
+                console.error('WebSocket is not in the OPEN state.');
+            }
+        }
+    </script>
+</body>
 </html>
+
