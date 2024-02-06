@@ -1,61 +1,9 @@
-<!-- <!DOCTYPE HTML>
-<html lang="en">
-
-<head >
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Trenton Bergdahl Portfolio</title>
-</head>
-<body class = "page">
-        
-       <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-       </div>
-       <br><br>
-       <div class="circle-container">
-        <img src="photos/me.jpg"  class="circle-image">
-       
-    </div>
-
-        <div class="text-below-circle">
-            <span class="name">Trenton Bergdahl</span> </div>
-  
-
-        <div class="intro">
-            <span class="text-with-background">Welcome to my portfolio website! Some quick links:</span>
-        </div>
-
-    <ul class = "no-bullet-list">
-        <li><span class = "listitem"><a href="https://www.linkedin.com/in/trenton-bergdahl-b26606250/">LinkedIn</a></span></li>
-        <li><span class = "listitem"><span class = "listitem"><a href="https://github.com/tbergdahl">GitHub</a></span></li>
-        <li><span class = "listitem"><a href="Trenton Bergdahl Resume.pdf">My Resume</a></span></li>
-    </ul>
-
-
-
-
-</body>
-
-
-</html>
-
-
-
-
-
-
-
-
-
-
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebSocket Example</title>
+    <title>Button Click Counter</title>
     <style>
         body {
             display: flex;
@@ -89,45 +37,51 @@
             right: 10px;
         }
     </style>
-    
 </head>
 <body>
-
     <h1>Rachel, Will You Be My Valentine?</h1>
-
-
-    <div class = "img"><img src="photos/rachel.jpg" alt="Your Image" style="width: 500px; height: auto; font-family: 'Courier New'" ></div>
-    <div class ="button-container">
-        <button onclick="sendRequest('Yes', 'yay.html')">Yes</button> 
-        <button onclick="sendRequest('Yes', 'yay.html')">Yes</button>
+    <div class="img"><img src="photos/rachel.jpg" alt="Your Image" style="width: 500px; height: auto; font-family: 'Courier New'"></div>
+    <div class="button-container">
+        <button id="yesButton">Yes</button> 
+        <button id="noButton">No</button>
     </div>
-    
-    <button class="bottom-right-button" onclick="sendRequest('No', 'frick.html')">No</button>
-
     <h2>(Date On 2/14/2024 @ 6PM, Or Whatever Works For You)</h2>
 
     <script>
-        // Define the socket variable globally
-        const socket = new WebSocket("ws://192.168.56.1:8765");
+        // Define the button click counts in localStorage
+        let yesCount = parseInt(localStorage.getItem('yesCount')) || 0;
+        let noCount = parseInt(localStorage.getItem('noCount')) || 0;
 
-        
+        // Set initial button counts
+        document.getElementById('yesButton').innerText = `Yes (${yesCount} times)`;
+        document.getElementById('noButton').innerText = `No (${noCount} times)`;
 
-        // Function to send requests using the WebSocket connection
-        function sendRequest(data, redirect) {
-            console.log('WebSocket connection state:', socket.readyState);
-
-            if (socket.readyState === WebSocket.OPEN) {
-                socket.send(data);
-
-
-                setTimeout(() => {
-                window.location.href = redirect; // Redirect to the specified URL
-            }, 1000);
-            } else {
-                console.error('WebSocket is not in the OPEN state.');
+        // Function to handle button clicks
+        function handleButtonClick(buttonType, redirect) {
+            if (buttonType === 'Yes') {
+                yesCount++;
+                localStorage.setItem('yesCount', yesCount);
+                document.getElementById('yesButton').innerText = `Yes (${yesCount} times)`;
+            } else if (buttonType === 'No') {
+                noCount++;
+                localStorage.setItem('noCount', noCount);
+                document.getElementById('noButton').innerText = `No (${noCount} times)`;
             }
+
+            // Redirect to the specified URL
+            setTimeout(() => {
+                window.location.href = redirect;
+            }, 1000);
         }
+
+        // Add click event listeners to buttons
+        document.getElementById('yesButton').addEventListener('click', () => {
+            handleButtonClick('Yes', 'yay.html');
+        });
+
+        document.getElementById('noButton').addEventListener('click', () => {
+            handleButtonClick('No', 'frick.html');
+        });
     </script>
 </body>
 </html>
-
