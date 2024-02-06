@@ -1,136 +1,44 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yes</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            height: 70vh;
-            margin: 0;
-        }
 
-        img {
-            width: 300px; /* Adjust the image size as needed */
-            height: auto; /* Maintain aspect ratio */
-        }
-
-        button-container {
-            display: flex;
-            gap: 10px; /* Adjust the gap between buttons */
-            margin-top: 5px; /* Adjust the margin between the image and buttons */
-        }
-
-        h1 {
-            color: #e60000; /* Change the font color as needed */
-            text-align: center;
-            margin-bottom: 20px; /* Adjust the margin at the bottom of the header */
-        }
-
-        .bottom-right-button {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-        }
-    </style>
+<head >
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Trenton Bergdahl Portfolio</title>
 </head>
-<body>
-    <h1>Rachel, Will You Be My Valentine?</h1>
-    <div class="img"><img src="photos/rachel.jpg" alt="Your Image" style="width: 500px; height: auto; font-family: 'Courier New'"></div>
-    <form action="https://formspree.io/f/mpzvpyzq" method="POST">
-        <label for="confirmation"></label>
-        <select id="confirmation" name="confirmation" required>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            <option value="Yes">Yes</option>
-            
-        </select>
+<body class = "page">
+        
+       <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+       </div>
+       <br><br>
+       <div class="circle-container">
+        <img src="photos/me.jpg"  class="circle-image">
+       
+    </div>
 
-        <script>
-            document.getElementById('confirmationForm').addEventListener('submit', function (event) {
-                const confirmationValue = document.getElementById('confirmation').value;
-    
-                // Redirect based on the selected option
-                if (confirmationValue === "Yes") {
-                    window.location.href = 'yay.html'; // Replace with your actual URL
-                } else if (confirmationValue === "No") {
-                    window.location.href = 'frick.html'; // Replace with your actual URL
-                }
-    
-                // Prevent the form from submitting normally
-                event.preventDefault();
-            });
-        </script>
+        <div class="text-below-circle">
+            <span class="name">Trenton Bergdahl</span> </div>
+  
 
-        <button type="submit">Yes</button>
-    </form>
+        <div class="intro">
+            <span class="text-with-background">Welcome to my portfolio website! Some quick links:</span>
+        </div>
 
-    
+    <ul class = "no-bullet-list">
+        <li><span class = "listitem"><a href="https://www.linkedin.com/in/trenton-bergdahl-b26606250/">LinkedIn</a></span></li>
+        <li><span class = "listitem"><span class = "listitem"><a href="https://github.com/tbergdahl">GitHub</a></span></li>
+        <li><span class = "listitem"><a href="Trenton Bergdahl Resume.pdf">My Resume</a></span></li>
+    </ul>
+
+
+
+
 </body>
+
+
 </html>
+
+
+
+
